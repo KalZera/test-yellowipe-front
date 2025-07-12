@@ -11,6 +11,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   isLoading: boolean;
   user: User | null;
+  accessToken: string | null;
   login: (token: string, user: User, refreshToken: string) => void;
   logout: () => void;
 }
@@ -25,67 +26,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const isAuthenticated = !!Cookies.get("token");
-  useEffect(() => {
-    const token = Cookies.get("token");
-    console.log("Token from cookies:", token);
-    // const requestInterceptor = api.interceptors.request.use(
-    //   (config) => {
-    //     if (accessToken) {
-    //       config.headers.Authorization = `Bearer ${accessToken}`;
-    //     }
-    //     return config;
-    //   },
-    //   (error) => Promise.reject(error)
-    // );
-
-    // const responseInterceptor = api.interceptors.response.use(
-    //   (response) => {
-    //     // Verifica se a resposta contém um novo token
-    //     const newToken = response.headers["x-new-token"];
-    //     if (newToken) {
-    //       setAccessToken(newToken);
-    //       localStorage.setItem("accessToken", newToken);
-    //     }
-    //     return response;
-    //   },
-    //   async (error) => {
-    //     const originalRequest = error.config;
-
-    //     if (error.response?.status === 401 && !originalRequest._retry) {
-    //       originalRequest._retry = true;
-
-    //       try {
-    //         // Tenta renovar o token usando o refresh token
-    //         const { data } = await api.post(
-    //           "/session/refresh",
-    //           {},
-    //           {
-    //             withCredentials: true, // Para enviar o cookie httpOnly
-    //           }
-    //         );
-
-    //         const newAccessToken = data.token;
-    //         setAccessToken(newAccessToken);
-    //         Cookies.set("token", newAccessToken);
-
-    //         // Repete a requisição original com o novo token
-    //         api.defaults.headers.Authorization = `Bearer ${newAccessToken}`;
-    //         return;
-    //       } catch (refreshError) {
-    //         // Se o refresh falhar, faz logout
-    //         logout();
-    //         return Promise.reject(refreshError);
-    //       }
-    //     }
-    //     return Promise.reject(error);
-    //   }
-    // );
-
-    // return () => {
-    //   api.interceptors.request.eject(requestInterceptor);
-    //   api.interceptors.response.eject(responseInterceptor);
-    // };
-  }, [accessToken]);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -100,7 +40,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   // Tenta fazer refresh automático ao carregar
   useEffect(() => {
-    console.log("Tentando fazer refresh automático ao carregar");
     const token = Cookies.get("token");
     // const user = Cookies.get("user");
     const userCookie = Cookies.get("user");
@@ -132,7 +71,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, isLoading, user, login, logout }}
+      value={{ isAuthenticated, isLoading, user, accessToken, login, logout }}
     >
       {children}
     </AuthContext.Provider>

@@ -2,6 +2,8 @@ Esse projeto está foi criado com o auxilio do vite, para executar basta, copiar
 
 para instalar e rodar o projeto siga as instruções abaixo, elas foram geradas diretamente pelo `create vite` e ja tem todas as regras de lint configuradas.
 
+o module de `user` está sendo utilizado formulários, então utilizei o `react-hook-forms` para fazer gerenciamento do formulário, o restante do projeto não estou utilizando, porque estou usando uma abordagem um pouco diferente. 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

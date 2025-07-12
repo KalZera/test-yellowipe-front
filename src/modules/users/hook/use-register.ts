@@ -24,6 +24,7 @@ export const useRegister = () => {
         navigate("/login");
       }
     } catch (error) {
+      toast.error("Ocorreu um erro ao cadastrar. Tente novamente.");
       console.error("Error registering user:", error);
     } finally {
       setLoading(false);

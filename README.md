@@ -1,3 +1,7 @@
+Esse projeto está foi criado com o auxilio do vite, para executar basta, copiar o .env.example para o arquivo .env e adicionar as varáveis de ambiente corretas.
+
+para instalar e rodar o projeto siga as instruções abaixo, elas foram geradas diretamente pelo `create vite` e ja tem todas as regras de lint configuradas.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

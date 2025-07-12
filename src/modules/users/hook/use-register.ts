@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { type RegisterBody, registerUserService } from "../services/register";
-import toast from "react-hot-toast";
+import toast from "@/utils/toast";
 import { useState } from "react";
 
 export const useRegister = () => {

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/authentication";
 import { type AuthenticationBody, loginUserService } from "../services/login";
+import toast from "@/utils/toast";
 
 export const useLogin = () => {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ export const useLogin = () => {
         navigate("/home");
       }
     } catch (error) {
+      toast.error("Falha ao fazer login. Verifique suas credenciais.");
       console.error("Error registering user:", error);
     }
   };

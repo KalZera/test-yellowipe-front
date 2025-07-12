@@ -3,7 +3,7 @@ import {
   createPostService,
   type CreatePostBody,
 } from "../services/create-post";
-import toast from "react-hot-toast";
+import toast from "@/utils/toast";
 
 export const useCreatePost = (fetchPosts: () => void) => {
   const [newPost, setNewPost] = useState("");

@@ -1,8 +1,129 @@
-Esse projeto está foi criado com o auxilio do vite, para executar basta, copiar o .env.example para o arquivo .env e adicionar as varáveis de ambiente corretas.
+# Test Yellowipe Front
 
-para instalar e rodar o projeto siga as instruções abaixo, elas foram geradas diretamente pelo `create vite` e ja tem todas as regras de lint configuradas.
+Este é um projeto frontend React + TypeScript criado com Vite. A aplicação inclui funcionalidades de autenticação, feed de posts e uma interface moderna construída com componentes customizados.
 
-o module de `user` está sendo utilizado formulários, então utilizei o `react-hook-forms` para fazer gerenciamento do formulário, o restante do projeto não estou utilizando, porque estou usando uma abordagem um pouco diferente.  
+## 📋 Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado em sua máquina:
+
+- **Node.js** (versão 18 ou superior)
+- **npm** ou **yarn** ou **pnpm**
+- **Git**
+
+## 🚀 Instalação e Execução Local
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/KalZera/test-yellowipe-front.git
+cd test-yellowipe-front
+```
+
+### 2. Instale as dependências
+
+```bash
+# Usando npm
+npm install
+
+# Ou usando yarn
+yarn install
+
+# Ou usando pnpm
+pnpm install
+```
+
+### 3. Configure as variáveis de ambiente
+
+Copie o arquivo de exemplo e configure as variáveis:
+
+```bash
+cp .env.example .env
+```
+
+Edite o arquivo `.env` e configure as variáveis necessárias:
+
+```env
+VITE_API_URL=<sua-variavel>
+```
+
+### 4. Execute o projeto em modo de desenvolvimento
+
+```bash
+# Usando npm
+npm run dev
+
+# Ou usando yarn
+yarn dev
+
+# Ou usando pnpm
+pnpm dev
+```
+
+A aplicação estará disponível em: `http://localhost:5173`
+
+## 🏗️ Scripts Disponíveis
+
+| Comando | Descrição |
+|---------|-----------|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera a build de produção |
+| `npm run preview` | Visualiza a build de produção localmente |
+| `npm run lint` | Executa o linter para verificar a qualidade do código |
+
+## 🛠️ Tecnologias Utilizadas
+
+### Principais
+- **React 19** - Biblioteca JavaScript para construção de interfaces
+- **TypeScript** - Superset do JavaScript com tipagem estática
+- **Vite** - Build tool rápida para desenvolvimento frontend
+- **React Router DOM** - Roteamento para aplicações React
+
+### UI e Estilização
+- **Tailwind CSS** - Framework CSS utilitário
+- **ShadCn** - Biblioteca de componentes baseada em Radix UI e Tailwind CSS
+
+### Formulários e Validação
+- **React Hook Form** - Biblioteca para gerenciamento de formulários
+- **Zod** - Schema de validação TypeScript-first
+
+### Estado e HTTP
+- **Zustand** - Gerenciamento de estado leve
+- **Axios** - Cliente HTTP
+- **js-cookie** - Manipulação de cookies
+
+### Desenvolvimento
+- **ESLint** - Linter para JavaScript/TypeScript
+- **Prettier** - Formatador de código
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── components/         # Componentes reutilizáveis
+│   ├── common/         # Componentes comuns (Header, etc.)
+│   └── ui/             # Componentes de UI básicos
+├── config/             # Configurações (axios, etc.)
+├── context/            # Contextos React (autenticação, etc.)
+├── modules/            # Módulos da aplicação
+│   ├── feed/           # Módulo do feed de posts
+│   └── users/          # Módulo de usuários
+├── routes/             # Configuração de rotas
+└── utils/              # Utilitários e helpers
+```
+
+## 🔐 Funcionalidades
+
+- **Autenticação**: Login e registro de usuários
+- **Feed de Posts**: Criação, edição e exclusão de posts
+- **Roteamento Privado**: Proteção de rotas autenticadas
+- **Interface Responsiva**: Design adaptável para diferentes dispositivos
+- **Gerenciamento de Estado**: Estado global com Zustand e Context API
+
+## 📝 Observações
+
+- O módulo de `user` utiliza `react-hook-forms` para gerenciamento de formulários
+- O projeto inclui configurações de ESLint e regras de lint pré-configuradas
+- A aplicação utiliza cookies para persistência da autenticação
 
 # React + TypeScript + Vite
 

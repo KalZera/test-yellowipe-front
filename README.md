@@ -125,6 +125,10 @@ src/
 - O projeto inclui configurações de ESLint e regras de lint pré-configuradas
 - A aplicação utiliza cookies para persistência da autenticação
 
+## Para acessar o back end
+
+- O back end to projeto está em outro repositório, para acessar clique [aqui](https://github.com/KalZera/test-yellowipe-back)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

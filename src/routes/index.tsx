@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { UserRegister } from "../modules/users/pages/register";
 import { UserLogin } from "../modules/users/pages/login";
 import { Feed } from "../modules/feed/pages/feed";
@@ -10,13 +10,17 @@ export const AppRoutes = () => {
     <Routes>
       {/* public Routes */}
       <Route element={<PublicRoute />}>
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/sign-in" element={<UserRegister />} />
         <Route path="/login" element={<UserLogin />} />
       </Route>
+
       {/* private Routes */}
       <Route element={<PrivateRoute />}>
         <Route path="/home" element={<Feed />} />
       </Route>
+
+      <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
   );
 };
